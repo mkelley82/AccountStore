@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="AccountStore.index1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Account Store (Chexys, Inc / Cub Creek, LLC)</title>
+    <link href="_css/site.css" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="heading"><p><font style="font-size: x-large; font-weight: bold;">Account Store</font>&nbsp;<i>((</i>DEVELOPMENT VERSION<i>))</i></p></div>
+    <div style="float: none;"></div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+    <div id="by" style="position: absolute; margin-bottom: 0;">
+        <p style="font-family: Arial, Tahoma, Sans-Serif; color: Gray; font-size: small;">AccountStore Developmed by Michael Kelley&nbsp;&nbsp;|&nbsp;&nbsp;Current Version: 0.1 Alpha&nbsp;&nbsp;|&nbsp;&nbsp;In part for use by Chexys, Inc. and it's friends and affiliates.</p>
+    </div>
+    </form>
+</body>
+</html>
