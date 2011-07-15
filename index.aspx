@@ -8,39 +8,57 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $("#content").corner();
+            $("#groups").corner();
+            $("#accounts").corner();
+            $("#welcome").corner("bottom");
         });
     </script>
+ 
 <script type="text/javascript">
     $(document).ready(function () {
         $("#hidden_link").fancybox({
-//            'title': 'Login',
-//            'titleShow': true,
-//            'titlePosition': 'over',
-//            'titleFormat': 'formatTitle',
-//            'type': 'iframe',
-//            'href' : 'login.aspx',
-////            'width': '67%',
-////            'height': '67%',
-//            'hideOnOverlayClick': false,
-//            'hideOnContentClick': false,
+            'hideOnOverlayClick': false,
+            'hideOnContentClick': false,
             'overlayOpacity': 0.7,
             'overlayColor': '#ffffff',
-            'enableEscapeButton': true,
-            'showCloseButton' : true,
-            //'modal' : true,
+            'modal' : true,
             'padding': 5
         });
     });
 </script>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <a href="#by" id="hidden_link" style="display:none;"></a>
 <div style="display: none;" >
-    <div id="by"><b>Hello, welcome to AccountStore!</b><%--&nbsp;&nbsp&nbsp;<a href="javascript:;" onclick="$.fancybox.close();" style="font-size: medium; color: #ff0000;">Close</a>--%></div>
+    <div id="by"><b>Before you can access the Account Store you must login first.</b>&nbsp;&nbsp&nbsp;<a href="javascript:;" onclick="$.fancybox.close();" style="font-size: medium; color: #ff0000;">Login</a></div>
 </div>
-    <asp:literal runat="server"></asp:literal>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="wrapper" style="margin-top: 9%;">
+        <div id="welcome"><asp:Label ID="lblWelcome" runat="server"></asp:Label></div>
+        <br />
+        <div id="groups">
+        <asp:DataList ID="DataList2" runat="server" ItemStyle-HorizontalAlign="Left" Caption="Groups" CaptionAlign="Top" BorderStyle="None">
+            <ItemTemplate>
+                <asp:LinkButton ID="lbGroup" runat="server"> <%# Eval("Name") %></asp:LinkButton>
+            </ItemTemplate>
+        </asp:DataList>
+        </div>
+        <br />
+    <div id="accounts">
+    <asp:DataList ID="DataList1" runat="server" Caption="Accounts" CaptionAlign="Top" 
+            BorderStyle="None" GridLines="Horizontal" 
+            onitemdatabound="dlAccounts_OnItemDataBound">
+        <ItemTemplate>
+            
+        <asp:Literal ID="litAccounts" runat="server"></asp:Literal>
+        </ItemTemplate>
+    </asp:DataList>
+    </div>
+    <br />
+    <%--<asp:literal runat="server"></asp:literal>--%>
 <asp:Literal ID="litFancybox" runat="server"></asp:Literal>
 <div id="content">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et purus quis metus sollicitudin pretium. Sed sed eros est. Quisque mi nisl, ultrices vel gravida a, ullamcorper nec lorem. Vivamus mattis faucibus odio ut tempus. Cras metus urna, adipiscing non dictum sit amet, pellentesque vel sapien. Phasellus a quam eget elit scelerisque condimentum a quis libero. Vestibulum in dolor in mauris rutrum molestie pulvinar fermentum diam. Curabitur ultricies ullamcorper urna in consequat. Nam vulputate faucibus fermentum. Sed commodo ante ac leo ornare non interdum sapien ornare. 
+<asp:Label ID="lblIpsum" runat="server"></asp:Label>
+
 </div>
+    </div>
 </asp:Content>

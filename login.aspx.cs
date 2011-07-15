@@ -32,7 +32,8 @@ namespace AccountStore
       // if user isn't null, we have a validated user and can proceed to the main page...
       if (user != null)
       {
-        Session.Add("AccountStore.login.valid." + user.UserId.ToString(), user);
+        Session.Add("objUser", user);
+        Session.Add("Email", user.Email);
         Response.Redirect("index.aspx");
       }
       Response.Redirect("login.aspx?valid=false");

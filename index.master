@@ -6,20 +6,30 @@
 <head runat="server">
     <title>Account Store (Chexys, Inc / Cub Creek, LLC)</title>
     <link href="_css/site.css" rel="stylesheet" type="text/css" />
-    
+    <script src="_js/jquery-1.6.2.js" type="text/javascript"></script>
+    <script src="_css/jquery.corner.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#circlelogo").corner('bottom');
+        });
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="heading"><p><font style="font-size: x-large; font-weight: bold;">Account Store</font>&nbsp;<i>((</i>DEVELOPMENT VERSION<i>))</i></p></div>
-    <div style="float: none;"></div>
+    <div id="heading">
+        <div id="circlelogo"><img src="images/AS_circle_deviant.png" /></div>
+        <div id="sep1"><p><font style="font-size: x-large; font-weight: bold;">Account Store</font>&nbsp;<i>((</i>DEVELOPMENT VERSION<i>))</i></p></div>
+    <div id="cornerlogo"><img id="tl_c_logo" src="images/AS_safe_dial_logo.png" alt="" /></div>
+    </div>
+    <div class="clearfix"></div>
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 
         </asp:ContentPlaceHolder>
     </div>
-    <div id="by" style="position: absolute; margin-bottom: 0;">
+    <div id="footing">
         <p style="font-family: Arial, Tahoma, Sans-Serif; color: Gray; font-size: small;">AccountStore Developmed by Michael Kelley&nbsp;&nbsp;|&nbsp;&nbsp;Current Version: 0.1 Alpha&nbsp;&nbsp;|&nbsp;&nbsp;In part for use by Chexys, Inc. and it's friends and affiliates.</p>
     </div>
     </form>

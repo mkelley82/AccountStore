@@ -27,7 +27,7 @@
             <div class="c">
                 <div class="s">
                     <!-- content area -->
-                    <h1>PassStore User Login...</h1>
+                    <h1>Account Store User Login...</h1>
                     <br />
                     <br />
                     <table>
